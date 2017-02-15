@@ -9,17 +9,20 @@ import rx.subscriptions.CompositeSubscription;
  */
 public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
 
-    private T view;
+    protected T view;
     protected CompositeSubscription compositeSubscription;
 
-    private void addSubscribe(Subscription subscription) {
+    protected void addSubscribe(Subscription subscription) {
          if (null == compositeSubscription) {
              compositeSubscription = new CompositeSubscription();
          }
         compositeSubscription.add(subscription);
     }
 
-    private void unSubscribe() {
+    protected void unSubscribe() {
+        if (null != compositeSubscription) {
+            compositeSubscription.unsubscribe();
+        }
 
     }
 

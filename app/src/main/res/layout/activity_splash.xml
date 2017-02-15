@@ -3,4 +3,18 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/iv_splash_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_splash_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:textSize="14sp"
+        android:layout_gravity="bottom|end"/>
+
 </FrameLayout>
