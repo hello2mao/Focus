@@ -1,0 +1,55 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "24.0.1"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 25
+    androidCompileSdkVersion = 25
+    androidApplicationId = "com.hello2mao.focus"
+    androidVersionCode = 1
+    androidVersionName = "1.0"
+
+    // ui
+    appCompatV7Version = '25.1.0'
+    // RxJava
+    rxJavaVersion = '1.1.6'
+    rxAndroidVersion = '1.2.1'
+    rxBindingVersion = '0.4.0'
+    rxJava2Version = '2.0.1'
+    rxAndroid2Version = '2.0.1'
+    // network
+    // di
+    daggerVersion = '2.0.2'
+    butterknifeVersion = '8.2.1'
+    annotationVersion = '10.0-b28'
+    // other
+    fragmentationVersion = '0.7.9'
+
+
+
+    appDependencies = [
+            // ui
+            appCompatV7:           "com.android.support:appcompat-v7:${appCompatV7Version}",
+            // Rxjava
+            rxJava:                "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid:             "io.reactivex:rxandroid:${rxAndroidVersion}",
+            rxBinding:             "com.jakewharton.rxbinding:rxbinding:${rxBindingVersion}",
+            rxJava2:               "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
+            rxAndroid2:            "io.reactivex.rxjava2:rxandroid:${rxAndroid2Version}",
+            // network
+            // di
+            dagger:                "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler:        "com.google.dagger:dagger-compiler:${daggerVersion}",
+            butterknife:           "com.jakewharton:butterknife:${butterknifeVersion}",
+            butterknifeCompiler:   "com.jakewharton:butterknife-compiler:${butterknifeVersion}",
+            annotation:            "org.glassfish:javax.annotation:${annotationVersion}",
+            // other
+            fragmentation:         "me.yokeyword:fragmentation:${fragmentationVersion}",
+
+    ]
+}
