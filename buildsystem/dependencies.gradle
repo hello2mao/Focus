@@ -35,8 +35,10 @@ ext {
     annotationVersion = '10.0-b28'
     // other
     fragmentationVersion = '0.7.9'
-
-
+    // widget
+    materialSearchViewVersion = '1.4.0'
+    // animation
+    androidAnimationsVersion = '1.1.2@aar'
 
     appDependencies = [
             // ui
@@ -64,6 +66,9 @@ ext {
             annotation:            "org.glassfish:javax.annotation:${annotationVersion}",
             // other
             fragmentation:         "me.yokeyword:fragmentation:${fragmentationVersion}",
-
+            // widget
+            materialSearchView:    "com.miguelcatalan:materialsearchview:${materialSearchViewVersion}",
+            // animation
+            androidAnimations:     "com.daimajia.androidanimations:library:${androidAnimationsVersion}"
     ]
 }

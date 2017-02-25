@@ -5,7 +5,4 @@ package com.hello2mao.focus.base;
  */
 public interface BaseView {
 
-    void showError(String msg);
-
-    void useNightMode(boolean isNight);
 }

@@ -4,8 +4,8 @@ package com.hello2mao.focus.model.http;
 import android.support.compat.BuildConfig;
 
 import com.hello2mao.focus.app.Constants;
-import com.hello2mao.focus.model.bean.SplashBean;
-import com.hello2mao.focus.model.http.api.ZhihuApis;
+import com.hello2mao.focus.model.bean.BaiduImageBean;
+import com.hello2mao.focus.model.http.api.BaiduImageApis;
 import com.hello2mao.focus.util.SystemUtil;
 
 import java.io.File;
@@ -27,7 +27,7 @@ import rx.Observable;
 public class RetrofitHelper {
 
     private OkHttpClient okHttpClient = null;
-    private static ZhihuApis zhihuApiService = null;
+    private static BaiduImageApis baiduImageApis = null;
 
     public RetrofitHelper() {
         init();
@@ -35,7 +35,7 @@ public class RetrofitHelper {
 
     private void init() {
         initOkHttp();
-        zhihuApiService = getApiService(ZhihuApis.HOST, ZhihuApis.class);
+        baiduImageApis = getApiService(BaiduImageApis.HOST, BaiduImageApis.class);
     }
 
     private void initOkHttp() {
@@ -102,7 +102,8 @@ public class RetrofitHelper {
         return retrofit.create(clz);
     }
 
-    public Observable<SplashBean> fetchSplashInfo(String res) {
-        return zhihuApiService.getSplashInfo(res);
+    public Observable<BaiduImageBean> fetchBaiduImageInfo(int pn, int rn, String tag1, String tag2,
+                                                          String ftags, String ie) {
+        return baiduImageApis.getBaiduImageInfo(pn, rn, tag1, tag2, ftags, ie);
     }
 }

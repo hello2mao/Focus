@@ -57,5 +57,11 @@ dependencies {
     apt app.butterknifeCompiler
     provided app.annotation
     // other
-    compile app.fragmentation
+//    compile app.fragmentation
+    compile 'net.oschina.common:common:0.1.5'
+    // widget
+    compile app.materialSearchView
+    // animation
+    compile app.androidAnimations
+    compile 'com.android.support:support-v4:25.2.0'
 }

@@ -4,7 +4,8 @@ import android.app.Activity;
 
 import com.hello2mao.focus.di.ActivityScope;
 import com.hello2mao.focus.di.module.ActivityModule;
-import com.hello2mao.focus.ui.main.SplashActivity;
+import com.hello2mao.focus.ui.main.activity.MainActivity;
+import com.hello2mao.focus.ui.main.activity.SplashActivity;
 
 import dagger.Component;
 
@@ -17,7 +18,7 @@ public interface ActivityComponent {
 
     void inject(SplashActivity splashActivity);
 
-//    void inject(MainActivity mainActivity);
+    void inject(MainActivity mainActivity);
 
 //    void inject(ZhihuDetailActivity zhihuDetailActivity);
 //

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Focus</string>
+    <string name="app_intro">Give you what you need</string>
+    <string name="drawer_group_content">资讯</string>
+    <string name="drawer_group_options">选项</string>
+    <string name="drawer_collection">收藏</string>
+    <string name="drawer_setting">设置</string>
+    <string name="drawer_about">关于</string>
+    <string name="zhihu">知乎日报</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string name="action_search">搜索</string>
+    <string name="mian_tab_names_news">综合</string>
+    <string name="mian_tab_names_video">视频</string>
+    <string name="mian_tab_names_explore">发现</string>
+    <string name="mian_tab_names_me">我的</string>
 </resources>

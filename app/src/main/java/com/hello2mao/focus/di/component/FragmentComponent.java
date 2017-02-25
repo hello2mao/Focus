@@ -4,6 +4,10 @@ import android.app.Activity;
 
 import com.hello2mao.focus.di.FragmentScope;
 import com.hello2mao.focus.di.module.FragmentModule;
+import com.hello2mao.focus.ui.explore.fragment.ExploreMainFragment;
+import com.hello2mao.focus.ui.me.fragment.MeMainFragment;
+import com.hello2mao.focus.ui.news.fragment.NewsMainFragment;
+import com.hello2mao.focus.ui.video.fragment.VideoMainFragment;
 
 import dagger.Component;
 
@@ -13,9 +17,17 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
-//    void inject(DailyFragment dailyFragment);
+    void inject(NewsMainFragment newsMainFragment);
+
+    void inject(VideoMainFragment videoMainFragment);
+
+    void inject(ExploreMainFragment exploreMainFragment);
+
+    void inject(MeMainFragment meMainFragment);
+
+//    void inject(ZhihuDailyFragment dailyFragment);
 //
-//    void inject(ThemeFragment themeFragment);
+//    void inject(ZhihuThemeFragment themeFragment);
 //
 //    void inject(SectionFragment sectionFragment);
 //

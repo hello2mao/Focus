@@ -12,7 +12,7 @@ public class RxUtil {
      * @param <T>
      * @return
      */
-    public static <T> Observable.Transformer<T, T> rxSchedulerHelper() {    //compose简化线程
+    public static <T> Observable.Transformer<T, T> rxSchedulerHelper() {
         return new Observable.Transformer<T, T>() {
             @Override
             public Observable<T> call(Observable<T> observable) {
