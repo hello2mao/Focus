@@ -6,16 +6,18 @@ allprojects {
 
 ext {
     //Android
-    androidBuildToolsVersion = "24.0.1"
+    androidBuildToolsVersion = "24.0.3"
     androidMinSdkVersion = 21
-    androidTargetSdkVersion = 25
-    androidCompileSdkVersion = 25
+    androidTargetSdkVersion = 24
+    androidCompileSdkVersion = 24
     androidApplicationId = "com.hello2mao.focus"
     androidVersionCode = 1
     androidVersionName = "1.0"
 
     // ui
     appCompatV7Version = '25.1.0'
+    supportV4Version = '25.1.0'
+    designVersion = "25.1.0"
     // RxJava
     rxJavaVersion = '1.1.6'
     rxAndroidVersion = '1.2.1'
@@ -43,6 +45,8 @@ ext {
     appDependencies = [
             // ui
             appCompatV7:           "com.android.support:appcompat-v7:${appCompatV7Version}",
+            supportV4:             "com.android.support:support-v4:${supportV4Version}",
+            design:                "com.android.support:design:${designVersion}",
             // Rxjava
             rxJava:                "io.reactivex:rxjava:${rxJavaVersion}",
             rxAndroid:             "io.reactivex:rxandroid:${rxAndroidVersion}",

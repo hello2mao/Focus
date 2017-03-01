@@ -37,6 +37,8 @@ dependencies {
 
     // ui
     compile app.appCompatV7
+    compile app.supportV4
+    compile app.design
     // RxJava
     compile app.rxJava
     compile app.rxAndroid
@@ -59,9 +61,9 @@ dependencies {
     // other
 //    compile app.fragmentation
     compile 'net.oschina.common:common:0.1.5'
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
     // widget
     compile app.materialSearchView
     // animation
     compile app.androidAnimations
-    compile 'com.android.support:support-v4:25.2.0'
 }

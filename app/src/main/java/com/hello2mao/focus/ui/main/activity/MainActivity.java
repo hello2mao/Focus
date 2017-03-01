@@ -1,8 +1,12 @@
 package com.hello2mao.focus.ui.main.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.DialogInterface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.app.App;
@@ -63,6 +67,45 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
             OnTabReselectListener listener = (OnTabReselectListener) fragment;
             // 图标被在此点击时调用相应的fragment中的onTabReselect
             listener.onTabReselect();
+        }
+    }
+
+    /**
+     * 底部导航栏的显示与隐藏
+     * @param isShowOrHide 显示或隐藏
+     */
+    public void toggleNavTabView(boolean isShowOrHide) {
+        final View view = bottomNav.getView();
+        if (view == null) return;
+        // hide
+        view.setVisibility(View.VISIBLE);
+        if (!isShowOrHide) {
+            view.animate()
+                    .translationY(view.getHeight())
+                    .setDuration(180)
+                    .setInterpolator(new LinearInterpolator())
+                    .setListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            super.onAnimationEnd(animation);
+                            view.setTranslationY(view.getHeight());
+                            view.setVisibility(View.GONE);
+                        }
+                    });
+        } else { // show
+            view.animate()
+                    .translationY(0)
+                    .setDuration(180)
+                    .setInterpolator(new LinearInterpolator())
+                    .setListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            super.onAnimationEnd(animation);
+                            // fix:bug > 点击隐藏的同时，快速点击显示
+                            view.setVisibility(View.VISIBLE);
+                            view.setTranslationY(0);
+                        }
+                    });
         }
     }
 }

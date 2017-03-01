@@ -1,35 +1,18 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <!--状态栏背景色。-->
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <!--各控制元件(如:check box、switch或是radoi)被勾选(checked)或是选定(selected)的颜色。-->
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionMenuTextColor">#ffffff</item>
-        //沉浸状态栏
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        //ActionBarDrawerToggle设置颜色
-        <item name="colorControlNormal">@android:color/white</item>
-    </style>
-
     <!--SplashActivity-->
-    <style name="Theme.AppStartLoad" parent="AppTheme">
+    <style name="Theme.AppStartLoad" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@mipmap/splash</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">false</item>
     </style>
 
-    <style name="MainTheme" parent="AppTheme">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/colorBackground</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
-
 
 </resources>

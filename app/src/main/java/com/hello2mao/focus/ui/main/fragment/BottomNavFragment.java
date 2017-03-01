@@ -10,8 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.base.SimpleFragment;
@@ -41,8 +39,8 @@ public class BottomNavFragment extends SimpleFragment implements View.OnClickLis
     BottomNavButton navExplore;
     @BindView(R.id.nav_item_me)
     BottomNavButton navMe;
-    @BindView(R.id.nav_item_tweet_pub)
-    ImageView navTweetPub;
+//    @BindView(R.id.nav_item_tweet_pub)
+//    ImageView navTweetPub;
 
     private Context context;
     private FragmentManager fragmentManager;
@@ -117,7 +115,7 @@ public class BottomNavFragment extends SimpleFragment implements View.OnClickLis
     @OnClick({
             R.id.nav_item_news,
             R.id.nav_item_video,
-            R.id.nav_item_tweet_pub,
+//            R.id.nav_item_tweet_pub,
             R.id.nav_item_explore,
             R.id.nav_item_me})
     @Override
@@ -125,10 +123,11 @@ public class BottomNavFragment extends SimpleFragment implements View.OnClickLis
         if (view instanceof BottomNavButton) {
             // 当图标被点击的时候
             doSelect((BottomNavButton) view);
-        } else if (view.getId() == R.id.nav_item_tweet_pub) {
-            // TODO:
-            Toast.makeText(context, "Tweet", Toast.LENGTH_SHORT).show();
         }
+//        } else if (view.getId() == R.id.nav_item_tweet_pub) {
+//            // TODO:
+//            Toast.makeText(context, "Tweet", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     /**
