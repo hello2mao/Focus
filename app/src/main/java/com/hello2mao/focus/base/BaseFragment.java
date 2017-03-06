@@ -55,9 +55,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment
         return new FragmentModule(this);
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         if (root != null) {
             ViewGroup parent = (ViewGroup) root.getParent();
             if (parent != null) {

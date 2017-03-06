@@ -37,8 +37,11 @@ dependencies {
 
     // ui
     compile app.appCompatV7
+    compile app.recyclerViewV7
     compile app.supportV4
     compile app.design
+    compile project(':pulltorefreshlib')
+    compile 'cn.bingoogolapple:bga-adapter:1.1.5@aar'
     // RxJava
     compile app.rxJava
     compile app.rxAndroid
@@ -59,7 +62,6 @@ dependencies {
     apt app.butterknifeCompiler
     provided app.annotation
     // other
-//    compile app.fragmentation
     compile 'net.oschina.common:common:0.1.5'
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     // widget

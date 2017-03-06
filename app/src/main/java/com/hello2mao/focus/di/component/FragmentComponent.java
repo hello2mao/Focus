@@ -6,7 +6,7 @@ import com.hello2mao.focus.di.FragmentScope;
 import com.hello2mao.focus.di.module.FragmentModule;
 import com.hello2mao.focus.ui.explore.fragment.ExploreMainFragment;
 import com.hello2mao.focus.ui.me.fragment.MeMainFragment;
-import com.hello2mao.focus.ui.news.fragment.DailyFragment;
+import com.hello2mao.focus.ui.news.fragment.RecommendFragment;
 import com.hello2mao.focus.ui.news.fragment.NewsMainFragment;
 import com.hello2mao.focus.ui.news.fragment.ThemeFragment;
 import com.hello2mao.focus.ui.video.fragment.VideoMainFragment;
@@ -27,7 +27,7 @@ public interface FragmentComponent {
 
     void inject(MeMainFragment meMainFragment);
 
-    void inject(DailyFragment dailyFragment);
+    void inject(RecommendFragment recommendFragment);
 
     void inject(ThemeFragment themeFragment);
 

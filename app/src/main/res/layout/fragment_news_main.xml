@@ -6,80 +6,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/coordinator_layout"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/app_bar_layout"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/toolbar_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:fitsSystemWindows="true"
+                app:titleTextColor="@android:color/white"
+                app:title="@string/app_name"/>
+            <com.miguelcatalan.materialsearchview.MaterialSearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/tab_layout_container"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
             <FrameLayout
-                android:id="@+id/toolbar_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways">
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:fitsSystemWindows="true"
-                    app:titleTextColor="@android:color/white"
-                    app:title="Focus"/>
-                <com.miguelcatalan.materialsearchview.MaterialSearchView
-                    android:id="@+id/search_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
-            <LinearLayout
-                android:id="@+id/tab_layout_container"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:background="#F6F6F6"
-                android:orientation="horizontal">
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <android.support.design.widget.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:tabMode="scrollable"
-                        app:tabIndicatorColor="@color/colorPrimary"
-                        app:tabSelectedTextColor="@color/colorPrimary"
-                        app:tabTextColor="@color/black"
-                        app:tabIndicatorHeight="2dp"/>
-                    <View
-                        android:layout_gravity="end"
-                        android:layout_width="24dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/shape_gradient"/>
-                </FrameLayout>
-                <ImageView
-                    android:id="@+id/iv_arrow_down"
-                    android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:src="@mipmap/ic_subscribe"
-                    android:contentDescription="@null"/>
-            </LinearLayout>
-        </android.support.design.widget.AppBarLayout>
+                    app:tabMode="scrollable"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabTextColor="@color/black"
+                    app:tabIndicatorHeight="2dp"/>
+                <View
+                    android:layout_gravity="end"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_gradient"/>
+            </FrameLayout>
+            <ImageView
+                android:id="@+id/iv_arrow_down"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:src="@mipmap/ic_subscribe"
+                android:contentDescription="@null"/>
+        </LinearLayout>
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-    </android.support.design.widget.CoordinatorLayout>
+            android:background="@color/white"/>
+    </LinearLayout>
 
     <!--root wrapper-->
     <com.hello2mao.focus.ui.news.widget.TabPickerView
         android:id="@+id/view_tab_picker"
+        android:paddingTop="?attr/actionBarSize"
         android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

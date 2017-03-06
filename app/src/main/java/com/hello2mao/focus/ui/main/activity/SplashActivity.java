@@ -4,8 +4,8 @@ import android.content.Intent;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.base.BaseActivity;
-import com.hello2mao.focus.presenter.SplashPresenter;
-import com.hello2mao.focus.presenter.contract.SplashContract;
+import com.hello2mao.focus.presenter.main.SplashPresenter;
+import com.hello2mao.focus.presenter.main.contract.SplashContract;
 
 public class SplashActivity extends BaseActivity<SplashPresenter> implements SplashContract.View {
 
@@ -41,5 +41,10 @@ public class SplashActivity extends BaseActivity<SplashPresenter> implements Spl
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void showError(String msg) {
+
     }
 }

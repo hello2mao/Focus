@@ -4,8 +4,8 @@ import android.widget.Toast;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.base.BaseFragment;
-import com.hello2mao.focus.presenter.MeMainPresenter;
-import com.hello2mao.focus.presenter.contract.MeMainContract;
+import com.hello2mao.focus.presenter.me.MeMainPresenter;
+import com.hello2mao.focus.presenter.me.contract.MeMainContract;
 import com.hello2mao.focus.ui.main.fragment.OnTabReselectListener;
 
 
@@ -30,6 +30,11 @@ public class MeMainFragment extends BaseFragment<MeMainPresenter> implements MeM
     @Override
     public void onTabReselect() {
         Toast.makeText(context, "Double Me", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void showError(String msg) {
 
     }
 }

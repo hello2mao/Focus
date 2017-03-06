@@ -1,6 +1,5 @@
 package com.hello2mao.focus.model.http.api;
 
-
 import com.hello2mao.focus.model.bean.BaiduImageBean;
 
 import retrofit2.http.GET;

@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.base.BaseFragment;
-import com.hello2mao.focus.presenter.NewsMainPresenter;
-import com.hello2mao.focus.presenter.contract.NewsMainContract;
+import com.hello2mao.focus.presenter.news.NewsMainPresenter;
+import com.hello2mao.focus.presenter.news.contract.NewsMainContract;
 import com.hello2mao.focus.ui.main.fragment.OnTabReselectListener;
 import com.hello2mao.focus.ui.news.adapter.NewsPagerAdapter;
 
@@ -28,7 +28,7 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter> implements
 //    @BindView(R.id.view_search)
 //    MaterialSearchView searchView;
 
-    private DailyFragment dailyFragment;
+    private RecommendFragment recommendFragment;
     private ThemeFragment themeFragment;
     NewsPagerAdapter newsPagerAdapter;
     String[] tabTitle = new String[]{"日报", "主题", "专栏", "热门", "其他"};
@@ -47,10 +47,10 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter> implements
     protected void initEventAndData() {
         ((AppCompatActivity) activity).setSupportActionBar(toolbar);
 
-        dailyFragment = new DailyFragment();
+        recommendFragment = new RecommendFragment();
         themeFragment = new ThemeFragment();
         newsPagerAdapter = new NewsPagerAdapter(getChildFragmentManager());
-        newsPagerAdapter.addTab(dailyFragment, tabTitle[0]);
+        newsPagerAdapter.addTab(recommendFragment, tabTitle[0]);
         newsPagerAdapter.addTab(themeFragment, tabTitle[1]);
         viewPager.setAdapter(newsPagerAdapter);
 
@@ -68,6 +68,11 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter> implements
     @Override
     public void onTabReselect() {
         Toast.makeText(context, "Double News", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void showError(String msg) {
 
     }
 

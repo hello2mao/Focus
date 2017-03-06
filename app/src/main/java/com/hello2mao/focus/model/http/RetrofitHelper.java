@@ -5,7 +5,9 @@ import android.support.compat.BuildConfig;
 
 import com.hello2mao.focus.app.Constants;
 import com.hello2mao.focus.model.bean.BaiduImageBean;
+import com.hello2mao.focus.model.bean.DailyListBean;
 import com.hello2mao.focus.model.http.api.BaiduImageApis;
+import com.hello2mao.focus.model.http.api.ZhihuApis;
 import com.hello2mao.focus.util.SystemUtil;
 
 import java.io.File;
@@ -28,6 +30,7 @@ public class RetrofitHelper {
 
     private OkHttpClient okHttpClient = null;
     private static BaiduImageApis baiduImageApis = null;
+    private static ZhihuApis zhihuApis = null;
 
     public RetrofitHelper() {
         init();
@@ -36,6 +39,7 @@ public class RetrofitHelper {
     private void init() {
         initOkHttp();
         baiduImageApis = getApiService(BaiduImageApis.HOST, BaiduImageApis.class);
+        zhihuApis = getApiService(ZhihuApis.HOST, ZhihuApis.class);
     }
 
     private void initOkHttp() {
@@ -105,5 +109,9 @@ public class RetrofitHelper {
     public Observable<BaiduImageBean> fetchBaiduImageInfo(int pn, int rn, String tag1, String tag2,
                                                           String ftags, String ie) {
         return baiduImageApis.getBaiduImageInfo(pn, rn, tag1, tag2, ftags, ie);
+    }
+
+    public Observable<DailyListBean> fetchDailyListInfo() {
+        return zhihuApis.getDailyList();
     }
 }

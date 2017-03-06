@@ -11,8 +11,8 @@ import android.view.animation.LinearInterpolator;
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.app.App;
 import com.hello2mao.focus.base.BaseActivity;
-import com.hello2mao.focus.presenter.MainPresenter;
-import com.hello2mao.focus.presenter.contract.MainContract;
+import com.hello2mao.focus.presenter.main.MainPresenter;
+import com.hello2mao.focus.presenter.main.contract.MainContract;
 import com.hello2mao.focus.ui.main.fragment.BottomNavFragment;
 import com.hello2mao.focus.ui.main.fragment.OnTabReselectListener;
 import com.hello2mao.focus.ui.main.widget.BottomNavButton;
@@ -107,5 +107,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                         }
                     });
         }
+    }
+
+    @Override
+    public void showError(String msg) {
+
     }
 }
