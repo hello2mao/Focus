@@ -1,5 +1,5 @@
 ##仿今日头条
-<img src="https://github.com/hello2mao/Focus/raw/master/captures/device-2017-03-12-210517.png" width="350">
+<img src="/captures/device-2017-03-12-210517.png" width="350">
 
 ##主要技术
 * MVP
@@ -19,3 +19,6 @@
 ##版本
 ###v1.0.0
 初稿，完成框架搭建及综合的新闻列表展示
+
+##License
+
