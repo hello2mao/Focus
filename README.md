@@ -1,5 +1,5 @@
 ##仿今日头条
-<img src="https://github.com/hello2mao/Focus/raw/master/captures/device-2017-03-12-210517.png" width="48">
+<img src="https://github.com/hello2mao/Focus/raw/master/captures/device-2017-03-12-210517.png" width="350">
 
 ##主要技术
 * MVP
