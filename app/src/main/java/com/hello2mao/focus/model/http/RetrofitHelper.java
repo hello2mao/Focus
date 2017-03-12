@@ -6,12 +6,16 @@ import android.support.compat.BuildConfig;
 import com.hello2mao.focus.app.Constants;
 import com.hello2mao.focus.model.bean.BaiduImageBean;
 import com.hello2mao.focus.model.bean.DailyListBean;
+import com.hello2mao.focus.model.bean.NewsBean;
+import com.hello2mao.focus.model.bean.ResultResponse;
 import com.hello2mao.focus.model.http.api.BaiduImageApis;
+import com.hello2mao.focus.model.http.api.ToutiaoApis;
 import com.hello2mao.focus.model.http.api.ZhihuApis;
 import com.hello2mao.focus.util.SystemUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
@@ -24,6 +28,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 import rx.Observable;
 
 public class RetrofitHelper {
@@ -31,6 +36,7 @@ public class RetrofitHelper {
     private OkHttpClient okHttpClient = null;
     private static BaiduImageApis baiduImageApis = null;
     private static ZhihuApis zhihuApis = null;
+    private static ToutiaoApis toutiaoApis = null;
 
     public RetrofitHelper() {
         init();
@@ -40,6 +46,7 @@ public class RetrofitHelper {
         initOkHttp();
         baiduImageApis = getApiService(BaiduImageApis.HOST, BaiduImageApis.class);
         zhihuApis = getApiService(ZhihuApis.HOST, ZhihuApis.class);
+        toutiaoApis = getApiService(ToutiaoApis.API_SERVER_URL, ToutiaoApis.class);
     }
 
     private void initOkHttp() {
@@ -52,6 +59,18 @@ public class RetrofitHelper {
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
             builder.addInterceptor(httpLoggingInterceptor);
         }
+        builder.addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request.Builder builder = chain.request().newBuilder();
+                builder.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.108 Safari/537.36 2345Explorer/8.0.0.13547");
+                builder.addHeader("Cache-Control", "max-age=0");
+                builder.addHeader("Upgrade-Insecure-Requests", "1");
+                builder.addHeader("X-Requested-With", "XMLHttpRequest");
+                builder.addHeader("Cookie", "uuid=\"w:f2e0e469165542f8a3960f67cb354026\"; __tasessionId=4p6q77g6q1479458262778; csrftoken=7de2dd812d513441f85cf8272f015ce5; tt_webid=36385357187");
+                return chain.proceed(builder.build());
+            }
+        });
         // http://www.jianshu.com/p/93153b34310e
         File cacheFile = new File(Constants.PATH_CACHE);
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
@@ -100,6 +119,7 @@ public class RetrofitHelper {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(okHttpClient)
+                .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
@@ -113,5 +133,13 @@ public class RetrofitHelper {
 
     public Observable<DailyListBean> fetchDailyListInfo() {
         return zhihuApis.getDailyList();
+    }
+
+    public Observable<DailyListBean> fetchDailyBeforeListInfo(String date) {
+        return zhihuApis.getDailyBeforeList(date);
+    }
+
+    public Observable<ResultResponse<List<NewsBean>>> fetchNews(String category) {
+        return toutiaoApis.getNews(category);
     }
 }

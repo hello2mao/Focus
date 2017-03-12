@@ -1,1 +1,1 @@
-include ':app', ':pulltorefreshlib'
+include ':app', ':pulltorefreshlib', ':adapterlib'

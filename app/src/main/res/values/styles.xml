@@ -13,7 +13,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-
+        <item name="main_bg">@color/white</item>
+        <item name="font_color">@color/black</item>
+        <item name="divider_light_grey">@color/ssxinxian1</item>
         <!--<item name="android:listDivider">@drawable/divider_bg</item>-->
     </style>
 

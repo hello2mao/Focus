@@ -36,15 +36,16 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tab_layout"
+                <com.hello2mao.focus.ui.news.widget.ColorTrackTabViewIndicator
+                    android:id="@+id/tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:tabMode="scrollable"
-                    app:tabIndicatorColor="@color/colorPrimary"
-                    app:tabSelectedTextColor="@color/colorPrimary"
-                    app:tabTextColor="@color/black"
-                    app:tabIndicatorHeight="2dp"/>
+                    android:background="?attr/main_bg"
+                    app:ctMode="scrollable"
+                    app:ctTabSelectedTextColor="@color/ssxinhongse1"
+                    app:ctTabTextColor="?attr/font_color"
+                    app:ctTabTextSize="16sp"
+                    app:ctTabWidth="50dp"/>
                 <View
                     android:layout_gravity="end"
                     android:layout_width="24dp"
@@ -62,6 +63,10 @@
                 android:src="@mipmap/ic_subscribe"
                 android:contentDescription="@null"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/divider_light_grey"/>
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"

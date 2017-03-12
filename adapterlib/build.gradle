@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    def globalConfig = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfig.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfig.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion globalConfig.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfig.getAt("androidTargetSdkVersion")
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    def app = rootProject.ext.appDependencies
+
+    // ui
+    compile app.appCompatV7
+    compile app.recyclerViewV7
+}

@@ -2,6 +2,7 @@ package com.hello2mao.focus.di.module;
 
 
 import com.hello2mao.focus.app.App;
+import com.hello2mao.focus.model.db.RealmHelper;
 import com.hello2mao.focus.model.http.RetrofitHelper;
 
 import javax.inject.Singleton;
@@ -31,9 +32,9 @@ public class AppModule {
         return new RetrofitHelper();
     }
 
-//    @Provides
-//    @Singleton
-//    RealmHelper provideRealmHelper() {
-//        return new RealmHelper(application);
-//    }
+    @Provides
+    @Singleton
+    RealmHelper provideRealmHelper() {
+        return new RealmHelper(application);
+    }
 }

@@ -1,7 +1,10 @@
 package com.hello2mao.focus.model.http.api;
 
 import com.hello2mao.focus.model.bean.DailyListBean;
+import com.hello2mao.focus.model.bean.ZhihuDetailBean;
+
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import rx.Observable;
 
 public interface ZhihuApis {
@@ -15,12 +18,19 @@ public interface ZhihuApis {
     @GET("news/latest")
     Observable<DailyListBean> getDailyList();
 
-//    /**
-//     * 往期日报
-//     * e.g. http://news-at.zhihu.com/api/4/news/before/"20170304
-//     */
-//    @GET("news/before/{date}")
-//    Observable<DailyBeforeListBean> getDailyBeforeList(@Path("date") String date);
+    /**
+     * 往期日报
+     * e.g. http://news-at.zhihu.com/api/4/news/before/20170304
+     */
+    @GET("news/before/{date}")
+    Observable<DailyListBean> getDailyBeforeList(@Path("date") String date);
+
+    /**
+     * 日报详情
+     */
+    @GET("news/{id}")
+    Observable<ZhihuDetailBean> getDetailInfo(@Path("id") int id);
+
 //
 //    /**
 //     * 主题日报

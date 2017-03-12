@@ -8,6 +8,7 @@ public class Constants {
     // Global Setting
     public static final boolean DEBUG = true;
     public static final String GLOBAL_TAG = "Focus";
+    public static final String DATA = "data";
 
     //================= TYPE ====================
     public static final int TYPE_ZHIHU = 101;

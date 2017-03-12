@@ -15,10 +15,12 @@ import java.util.List;
 public class NewsPagerAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragments = new ArrayList<>();
-    private List<String> titles = new ArrayList<>();
+    private String[] tabTitles;
 
-    public NewsPagerAdapter(FragmentManager fm) {
+    public NewsPagerAdapter(FragmentManager fm, List<Fragment> fragments, String[] tabTitles) {
         super(fm);
+        this.fragments = fragments;
+        this.tabTitles = tabTitles;
     }
 
     /**
@@ -37,8 +39,8 @@ public class NewsPagerAdapter extends FragmentPagerAdapter {
         return fragments.size();
     }
 
-    public void addTab(Fragment fragment, String title) {
-        fragments.add(fragment);
-        titles.add(title);
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles == null ? "" : tabTitles[position];
     }
 }

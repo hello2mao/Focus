@@ -5,6 +5,7 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt' // 注释处理
+apply plugin: 'realm-android'
 
 android {
     def globalConfig = rootProject.extensions.getByName("ext")
@@ -41,7 +42,7 @@ dependencies {
     compile app.supportV4
     compile app.design
     compile project(':pulltorefreshlib')
-    compile 'cn.bingoogolapple:bga-adapter:1.1.5@aar'
+    compile project(':adapterlib')
     // RxJava
     compile app.rxJava
     compile app.rxAndroid
@@ -51,6 +52,7 @@ dependencies {
     compile app.retrofit2
     compile app.converterGson
     compile app.adapterRxjava
+    compile app.converterScalars
     compile app.okhttp3
     compile app.loggingInterceptor
     compile app.glide

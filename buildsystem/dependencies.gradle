@@ -28,6 +28,7 @@ ext {
     // network
     gsonVersion = '2.4'
     retrofit2Version = '2.0.2'
+    converterScalarsVersion = '2.0.2'
     okhttp3Version = '3.2.0'
     loggingInterceptorVersion = '3.0.1'
     glideVersion = '3.7.0'
@@ -60,6 +61,7 @@ ext {
             retrofit2:             "com.squareup.retrofit2:retrofit:${retrofit2Version}",
             converterGson:         "com.squareup.retrofit2:converter-gson:${retrofit2Version}",
             adapterRxjava:         "com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}",
+            converterScalars:      "com.squareup.retrofit2:converter-scalars:${converterScalarsVersion}",
             okhttp3:               "com.squareup.okhttp3:okhttp:${okhttp3Version}",
             loggingInterceptor:    "com.squareup.okhttp3:logging-interceptor:${loggingInterceptorVersion}",
             glide:                 "com.github.bumptech.glide:glide:${glideVersion}",
