@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.hello2mao.focus.R;
 import com.hello2mao.focus.app.Constants;
@@ -79,7 +80,8 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter> implements
 
     @Override
     public void showError(String msg) {
-
+        // TODO:可以换个更加美观的
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override

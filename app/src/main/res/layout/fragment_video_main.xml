@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/tab_layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#F6F6F6"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <com.hello2mao.focus.ui.news.widget.ColorTrackTabViewIndicator
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/main_bg"
+                app:ctMode="scrollable"
+                app:ctTabSelectedTextColor="@color/ssxinhongse1"
+                app:ctTabTextColor="?attr/font_color"
+                app:ctTabTextSize="16sp"
+                app:ctTabWidth="50dp"/>
+            <View
+                android:layout_gravity="end"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_gradient"/>
+        </FrameLayout>
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:src="@mipmap/ic_search"
+            android:contentDescription="@null"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/divider_light_grey"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Video"/>
+        android:background="@color/white"/>
 </LinearLayout>

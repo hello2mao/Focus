@@ -1,6 +1,6 @@
 ##仿今日头条
 
-![image](/captures/device-2017-03-12-210517.png)
+![image](/captures/device-2017-03-18-180339.png)
 
 ##主要技术
 * MVP
