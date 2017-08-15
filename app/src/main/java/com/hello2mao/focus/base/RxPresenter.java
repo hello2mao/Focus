@@ -27,7 +27,6 @@ public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
         if (null != compositeSubscription) {
             compositeSubscription.unsubscribe();
         }
-
     }
 
     @Override

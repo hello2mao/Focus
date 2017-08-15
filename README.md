@@ -1,8 +1,8 @@
-##仿今日头条
+## 仿今日头条
 
 ![image](/captures/device-2017-03-18-180339.png)
 
-##主要技术
+## 主要技术
 * MVP
 * Material Design
 * RxJava
@@ -12,16 +12,16 @@
 * Realm
 * RecyclerView
 
-##参考
+## 参考
 1. OSChina: https://git.oschina.net/oschina/android-app
 2. GeekNews: https://github.com/codeestX/GeekNews
 3. TodayNews: https://github.com/yewei02538/TodayNews
 
-##版本
-###v1.0.0
+## 版本
+### v1.0.0
 初稿，完成框架搭建及综合的新闻列表展示
 
-##License
+## License
     Copyright (C) 2017 hello2mao
     
     Licensed under the Apache License, Version 2.0 (the "License");
