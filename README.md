@@ -1,5 +1,11 @@
 # 仿今日头条
 
+## 效果图
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/8265961/56090736-b5f21980-5ed8-11e9-8887-41a1ac8e4746.png">
+  <br/>
+</p>
+
 ## 主要技术
 * MVP
 * Material Design
@@ -14,12 +20,6 @@
 1. OSChina: https://git.oschina.net/oschina/android-app
 2. GeekNews: https://github.com/codeestX/GeekNews
 3. TodayNews: https://github.com/yewei02538/TodayNews
-
-## 效果图
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/8265961/56090736-b5f21980-5ed8-11e9-8887-41a1ac8e4746.png">
-  <br/>
-</p>
 
 ## License
     Copyright (C) 2017 hello2mao
