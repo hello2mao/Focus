@@ -17,7 +17,7 @@
 
 ## 效果图
 <p align="center">
-  <img src="/captures/device-2017-03-18-180339.png">
+  <img src="https://raw.githubusercontent.com/hello2mao/Focus/master/captures/device-2017-03-18-180339.png">
   <br/>
 </p>
 
